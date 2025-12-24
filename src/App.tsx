@@ -407,30 +407,28 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
         <group position={[0, 9, -18]}>
           
-          {/* Dòng 1: MERRY CHRISTMAS - Nét bút tương tự Indie Flower */}
+          {/* Dòng 1: MERRY CHRISTMAS */}
           <Text
-            position={[0, 2.8, 0]}
-            fontSize={3.8}
+            position={[0, 2.5, 0]}
+            fontSize={4}
             color="#FFD700"
-            font="https://unpkg.com/@canvas-fonts/patrick-hand/fonts/PatrickHand-Regular.ttf"
+            font="/indie.ttf" // Trỏ thẳng vào file trong thư mục public
             anchorX="center"
             anchorY="middle"
-            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
             MERRY CHRISTMAS
           </Text>
 
-          {/* Dòng 2: Cong Hau - Font Caveat nét chuẩn chuyên dùng cho WebGL */}
+          {/* Dòng 2: Cong Hau */}
           <Text
             position={[0, -2.5, 0]}
-            fontSize={5.2}
+            fontSize={5.5}
             color="#FFD700"
-            font="https://unpkg.com/@canvas-fonts/caveat/fonts/Caveat-Regular.ttf"
+            font="/caveat.ttf" // Trỏ thẳng vào file trong thư mục public
             anchorX="center"
             anchorY="middle"
-            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
