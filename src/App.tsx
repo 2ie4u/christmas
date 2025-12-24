@@ -425,10 +425,10 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
 
           {/* 3 Dòng tiếp theo: Lời chúc (Font Caveat cho mềm mại) */}
           <Text
-            position={[0, -2, 0]} // Vị trí nằm dưới MERRY CHRISTMAS
-            lineHeight={1.2}       // Khoảng cách giữa các dòng cho thoáng
+            position={[0, -5, 0]} // Vị trí nằm dưới MERRY CHRISTMAS
+            lineHeight={1}       // Khoảng cách giữa các dòng cho thoáng
             fontSize={3}         // Kích thước vừa phải để hiện rõ 3 dòng
-            color="#FFD700"
+            color="#fff4b6ff"
             font="/Caveat-Regular.ttf" // Đổi lại font Caveat cho lãng mạn
             anchorX="center"
             anchorY="middle"
