@@ -405,14 +405,15 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <pointLight position={[0, -20, 10]} intensity={30} color="#ffffff" />
 
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
-        <group position={[0, 9, -18]}>
+        {/* Mình nâng cụm chữ lên y=10 để đủ không gian cho 4 dòng không bị cây che */}
+        <group position={[0, 10, -18]}> 
           
-          {/* Dòng 1: MERRY CHRISTMAS - Sử dụng font Indie Flower */}
+          {/* Dòng 1: MERRY CHRISTMAS (Font Indie Flower) */}
           <Text
-            position={[0, 2.8, 0]}
+            position={[0, 4.5, 0]} 
             fontSize={3.8}
             color="#FFD700"
-            font="/IndieFlower-Regular.ttf"  // Viết chính xác tên file trong thư mục public
+            font="/IndieFlower-Regular.ttf"
             anchorX="center"
             anchorY="middle"
             textAlign="center"
@@ -422,19 +423,20 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
             MERRY CHRISTMAS
           </Text>
 
-          {/* Dòng 2: Cong Hau - Sử dụng font Caveat */}
+          {/* 3 Dòng tiếp theo: Lời chúc (Font Caveat cho mềm mại) */}
           <Text
-            position={[0, -2.5, 0]}
-            fontSize={2.5} 
+            position={[0, -1.5, 0]} // Vị trí nằm dưới MERRY CHRISTMAS
+            lineHeight={1.4}       // Khoảng cách giữa các dòng cho thoáng
+            fontSize={2.8}         // Kích thước vừa phải để hiện rõ 3 dòng
             color="#FFD700"
-            font="/IndieFlower-Regular.ttf"      // Viết chính xác tên file trong thư mục public
+            font="/Caveat-Regular.ttf" // Đổi lại font Caveat cho lãng mạn
             anchorX="center"
             anchorY="middle"
-            textAlign="center"
-            outlineWidth={0.03}
+            textAlign="center"      // Căn giữa cả 3 dòng
+            outlineWidth={0.04}
             outlineColor="#ffffff"
           >
-            Anh iuu Miiu
+            {"Chúc em giáng sinh vui vẻ\nmãi bên anh nhé\nAnh yêu em"}
           </Text>
           
         </group>
