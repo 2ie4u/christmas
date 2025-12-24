@@ -425,13 +425,13 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
           {/* Dòng 2: Cong Hau - Sử dụng font Caveat */}
           <Text
             position={[0, -2.5, 0]}
-            fontSize={5.5} 
+            fontSize={2.5} 
             color="#FFD700"
-            font="/Satisfy-Regular.ttf"      // Viết chính xác tên file trong thư mục public
+            font="/IndieFlower-Regular.ttf"      // Viết chính xác tên file trong thư mục public
             anchorX="center"
             anchorY="middle"
             textAlign="center"
-            outlineWidth={0.06}
+            outlineWidth={0.03}
             outlineColor="#ffffff"
           >
             Anh iuu Miiu
