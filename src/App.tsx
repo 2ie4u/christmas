@@ -436,7 +436,7 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
             outlineWidth={0.03}
             outlineColor="#ffffff"
           >
-            {"Chúc em giáng sinh vui vẻ\nmãi bên anh nhé\nAnh yêu em"}
+            {"chúc em giáng sinh vui vẻ\nmãi bên anh nhé\nanh yêu em"}
           </Text>
           
         </group>
