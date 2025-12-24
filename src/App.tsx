@@ -411,7 +411,7 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
           {/* Dòng 1: MERRY CHRISTMAS (Font Indie Flower) */}
           <Text
             position={[0, 4.5, 0]} 
-            fontSize={3.8}
+            fontSize={5}
             color="#FFD700"
             font="/IndieFlower-Regular.ttf"
             anchorX="center"
@@ -425,15 +425,15 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
 
           {/* 3 Dòng tiếp theo: Lời chúc (Font Caveat cho mềm mại) */}
           <Text
-            position={[0, -1.5, 0]} // Vị trí nằm dưới MERRY CHRISTMAS
-            lineHeight={1.4}       // Khoảng cách giữa các dòng cho thoáng
-            fontSize={2.8}         // Kích thước vừa phải để hiện rõ 3 dòng
+            position={[0, -2, 0]} // Vị trí nằm dưới MERRY CHRISTMAS
+            lineHeight={1.2}       // Khoảng cách giữa các dòng cho thoáng
+            fontSize={3}         // Kích thước vừa phải để hiện rõ 3 dòng
             color="#FFD700"
             font="/Caveat-Regular.ttf" // Đổi lại font Caveat cho lãng mạn
             anchorX="center"
             anchorY="middle"
             textAlign="center"      // Căn giữa cả 3 dòng
-            outlineWidth={0.04}
+            outlineWidth={0.03}
             outlineColor="#ffffff"
           >
             {"Chúc em giáng sinh vui vẻ\nmãi bên anh nhé\nAnh yêu em"}
