@@ -406,13 +406,13 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
 
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
         <Text
-          position={[0, 8, -20]} // Đẩy lên cao một chút (y=8) để không bị cây che
+          position={[0, 10, -15]} // Mình nâng cao lên (y=10) và cho gần lại một chút (z=-15) để bạn dễ thấy
           fontSize={4}
-          color="#FFD700"
+          color="#FFD700"         // Màu vàng Gold
           anchorX="center"
           anchorY="middle"
-          outlineWidth={0.05}
-          outlineColor="#ffffff"
+          outlineWidth={0.08}
+          outlineColor="#D32F2F"  // Viền màu đỏ cho rực rỡ không khí Noel
         >
           MERRY CHRISTMAS
           {"\n"}
