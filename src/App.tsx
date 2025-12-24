@@ -42,10 +42,10 @@ const CONFIG = {
     candyColors: ['#FF0000', '#FFFFFF']
   },
   counts: {
-    foliage: 10000,
-    ornaments: 200,   // 拍立得照片数量
-    elements: 100,    // 圣诞元素数量
-    lights: 300       // 彩灯数量
+    foliage: 15000,
+    ornaments: 300,   // 拍立得照片数量
+    elements: 200,    // 圣诞元素数量
+    lights: 400       // 彩灯数量
   },
   tree: { height: 22, radius: 9 }, // 树体尺寸
   photos: {
@@ -513,26 +513,11 @@ export default function GrandTreeApp() {
     <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000', position: 'relative', overflow: 'hidden' }}>
       {/* 1. Phần hiển thị cây thông 3D */}
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
-        <Canvas 
-  // 1. Giảm tỉ lệ điểm ảnh xuống 1 (Thay vì [1, 2]). Đây là yếu tố quan trọng nhất để bớt lag.
-  dpr={1} 
-  
-  // 2. Tắt các tính năng không cần thiết và ưu tiên hiệu năng
-  gl={{ 
-    toneMapping: THREE.ReinhardToneMapping,
-    powerPreference: "high-performance", // Ép trình duyệt dùng chip đồ họa mạnh nhất
-    antialias: false,  // Tắt khử răng cưa để tiết kiệm tài nguyên
-    stencil: false,    // Tắt bộ nhớ đệm stencil không dùng tới
-    depth: true        // Chỉ giữ lại bộ nhớ đệm chiều sâu
-  }} 
-  
-  // 3. Tắt tính năng tính toán bóng đổ nặng nề
-  shadows={false} 
->
-  <Suspense fallback={null}>
-     <Experience sceneState={sceneState} rotationSpeed={rotationSpeed} />
-  </Suspense>
-</Canvas>
+        <Canvas dpr={[1, 2]} gl={{ toneMapping: THREE.ReinhardToneMapping }} shadows>
+            <Suspense fallback={null}>
+               <Experience sceneState={sceneState} rotationSpeed={rotationSpeed} />
+            </Suspense>
+        </Canvas>
       </div>
 
       {/* 2. Phần xử lý trí tuệ nhân tạo (AI) ẩn bên dưới */}
