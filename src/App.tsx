@@ -17,7 +17,7 @@ import * as random from 'maath/random';
 import { GestureRecognizer, FilesetResolver, DrawingUtils } from "@mediapipe/tasks-vision";
 
 // --- 动态生成照片列表 (top.jpg + 1.jpg 到 31.jpg) ---
-const TOTAL_NUMBERED_PHOTOS = 31;
+const TOTAL_NUMBERED_PHOTOS = 21;
 // 修改：将 top.jpg 加入到数组开头
 const bodyPhotoPaths = [
   '/photos/top.jpg',
@@ -504,51 +504,29 @@ const GestureController = ({ onGesture, onMove, onStatus, debugMode }: any) => {
 };
 
 // --- App Entry ---
+const handleAiStatus = () => {};
 export default function GrandTreeApp() {
   const [sceneState, setSceneState] = useState<'CHAOS' | 'FORMED'>('CHAOS');
   const [rotationSpeed, setRotationSpeed] = useState(0);
-  const [aiStatus, setAiStatus] = useState("INITIALIZING...");
-  const [debugMode, setDebugMode] = useState(false);
 
   return (
     <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000', position: 'relative', overflow: 'hidden' }}>
+      {/* 1. Phần hiển thị cây thông 3D */}
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
         <Canvas dpr={[1, 2]} gl={{ toneMapping: THREE.ReinhardToneMapping }} shadows>
-            <Experience sceneState={sceneState} rotationSpeed={rotationSpeed} />
+            <Suspense fallback={null}>
+               <Experience sceneState={sceneState} rotationSpeed={rotationSpeed} />
+            </Suspense>
         </Canvas>
       </div>
-      <GestureController onGesture={setSceneState} onMove={setRotationSpeed} onStatus={setAiStatus} debugMode={debugMode} />
 
-      {/* UI - Stats */}
-      <div style={{ position: 'absolute', bottom: '30px', left: '40px', color: '#888', zIndex: 10, fontFamily: 'sans-serif', userSelect: 'none' }}>
-        <div style={{ marginBottom: '15px' }}>
-          <p style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>Memories</p>
-          <p style={{ fontSize: '24px', color: '#FFD700', fontWeight: 'bold', margin: 0 }}>
-            {CONFIG.counts.ornaments.toLocaleString()} <span style={{ fontSize: '10px', color: '#555', fontWeight: 'normal' }}>POLAROIDS</span>
-          </p>
-        </div>
-        <div>
-          <p style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>Foliage</p>
-          <p style={{ fontSize: '24px', color: '#004225', fontWeight: 'bold', margin: 0 }}>
-            {(CONFIG.counts.foliage / 1000).toFixed(0)}K <span style={{ fontSize: '10px', color: '#555', fontWeight: 'normal' }}>EMERALD NEEDLES</span>
-          </p>
-        </div>
-      </div>
-
-      {/* UI - Buttons */}
-      <div style={{ position: 'absolute', bottom: '30px', right: '40px', zIndex: 10, display: 'flex', gap: '10px' }}>
-        <button onClick={() => setDebugMode(!debugMode)} style={{ padding: '12px 15px', backgroundColor: debugMode ? '#FFD700' : 'rgba(0,0,0,0.5)', border: '1px solid #FFD700', color: debugMode ? '#000' : '#FFD700', fontFamily: 'sans-serif', fontSize: '12px', fontWeight: 'bold', cursor: 'pointer', backdropFilter: 'blur(4px)' }}>
-           {debugMode ? 'HIDE DEBUG' : '🛠 DEBUG'}
-        </button>
-        <button onClick={() => setSceneState(s => s === 'CHAOS' ? 'FORMED' : 'CHAOS')} style={{ padding: '12px 30px', backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255, 215, 0, 0.5)', color: '#FFD700', fontFamily: 'serif', fontSize: '14px', fontWeight: 'bold', letterSpacing: '3px', textTransform: 'uppercase', cursor: 'pointer', backdropFilter: 'blur(4px)' }}>
-           {sceneState === 'CHAOS' ? 'Assemble Tree' : 'Disperse'}
-        </button>
-      </div>
-
-      {/* UI - AI Status */}
-      <div style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)', color: aiStatus.includes('ERROR') ? '#FF0000' : 'rgba(255, 215, 0, 0.4)', fontSize: '10px', letterSpacing: '2px', zIndex: 10, background: 'rgba(0,0,0,0.5)', padding: '4px 8px', borderRadius: '4px' }}>
-        {aiStatus}
-      </div>
+      {/* 2. Phần xử lý trí tuệ nhân tạo (AI) ẩn bên dưới */}
+      <GestureController 
+        onGesture={setSceneState} 
+        onMove={setRotationSpeed} 
+        onStatus={handleAiStatus} // Dùng hàm tĩnh đã khai báo ở Bước 1
+        debugMode={false} 
+      />
     </div>
   );
 }
