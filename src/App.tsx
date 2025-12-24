@@ -405,19 +405,39 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <pointLight position={[0, -20, 10]} intensity={30} color="#ffffff" />
 
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
-        <Text
-          position={[0, 10, -15]} // Mình nâng cao lên (y=10) và cho gần lại một chút (z=-15) để bạn dễ thấy
-          fontSize={4}
-          color="#FFD700"         // Màu vàng Gold
-          anchorX="center"
-          anchorY="middle"
-          outlineWidth={0.08}
-          outlineColor="#D32F2F"  // Viền màu đỏ cho rực rỡ không khí Noel
-        >
-          MERRY CHRISTMAS
-          {"\n"}
-          CONG HAU
-        </Text>
+        <group position={[0, 8, -15]}> {/* Vị trí tổng thể của cả cụm chữ */}
+          
+          {/* Dòng 1: MERRY CHRISTMAS với font Indie Flower */}
+          <Text
+            position={[0, 2, 0]} // Đặt ở phía trên
+            fontSize={3.5}
+            color="#FFD700"
+            font="https://cdn.jsdelivr.net/gh/google/fonts/ofl/indieflower/IndieFlower-Regular.ttf"
+            anchorX="center"
+            anchorY="middle"
+            textAlign="center"
+            outlineWidth={0.06}
+            outlineColor="#ffffff"
+          >
+            MERRY CHRISTMAS
+          </Text>
+
+          {/* Dòng 2: CONG HAU với font Caveat */}
+          <Text
+            position={[0, -2, 0]} // Đặt ở phía dưới
+            fontSize={4.5} // Font Caveat thường hơi mảnh nên cho to hơn chút
+            color="#FFD700"
+            font="https://cdn.jsdelivr.net/gh/google/fonts/ofl/caveat/Caveat-VariableFont_wght.ttf"
+            anchorX="center"
+            anchorY="middle"
+            textAlign="center"
+            outlineWidth={0.06}
+            outlineColor="#ffffff"
+          >
+            Anh iu Miiu
+          </Text>
+          
+        </group>
       </Float>
 
       <group position={[0, -6, 0]}>
