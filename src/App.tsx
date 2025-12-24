@@ -406,17 +406,16 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
 
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
         <Text
-          position={[0, 5, -20]} // Trục Z là -20 để nó đẩy ra PHÍA SAU cây thông
-          fontSize={4}           // Kích thước chữ
-          color="#FFD700"        // Màu vàng gold giống ngôi sao
-          font="https://fonts.gstatic.com/s/monoton/v10/5h1aiZUr994mG8mUpoY92A.woff" // Font kiểu neon (hoặc xóa dòng này để dùng font mặc định)
+          position={[0, 8, -20]} // Đẩy lên cao một chút (y=8) để không bị cây che
+          fontSize={4}
+          color="#FFD700"
           anchorX="center"
           anchorY="middle"
           outlineWidth={0.05}
           outlineColor="#ffffff"
         >
           MERRY CHRISTMAS
-          {"\n"} {/* Xuống dòng */}
+          {"\n"}
           CONG HAU
         </Text>
       </Float>
