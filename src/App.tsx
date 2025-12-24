@@ -8,7 +8,8 @@ import {
   Float,
   Stars,
   Sparkles,
-  useTexture
+  useTexture,
+  Text
 } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import * as THREE from 'three';
@@ -402,6 +403,23 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <pointLight position={[30, 30, 30]} intensity={100} color={CONFIG.colors.warmLight} />
       <pointLight position={[-30, 10, -30]} intensity={50} color={CONFIG.colors.gold} />
       <pointLight position={[0, -20, 10]} intensity={30} color="#ffffff" />
+
+      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
+        <Text
+          position={[0, 5, -20]} // Trục Z là -20 để nó đẩy ra PHÍA SAU cây thông
+          fontSize={4}           // Kích thước chữ
+          color="#FFD700"        // Màu vàng gold giống ngôi sao
+          font="https://fonts.gstatic.com/s/monoton/v10/5h1aiZUr994mG8mUpoY92A.woff" // Font kiểu neon (hoặc xóa dòng này để dùng font mặc định)
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={0.05}
+          outlineColor="#ffffff"
+        >
+          MERRY CHRISTMAS
+          {"\n"} {/* Xuống dòng */}
+          CONG HAU
+        </Text>
+      </Float>
 
       <group position={[0, -6, 0]}>
         <Foliage state={sceneState} />
