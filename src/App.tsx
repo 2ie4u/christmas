@@ -407,28 +407,30 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
         <group position={[0, 9, -18]}>
           
-          {/* Dòng 1: MERRY CHRISTMAS */}
+          {/* Dòng 1: MERRY CHRISTMAS - Sử dụng font Indie Flower */}
           <Text
-            position={[0, 2.5, 0]}
-            fontSize={4}
+            position={[0, 2.8, 0]}
+            fontSize={3.8}
             color="#FFD700"
-            font="/indie.ttf" // Trỏ thẳng vào file trong thư mục public
+            font="/IndieFlower-Regular.ttf"  // Viết chính xác tên file trong thư mục public
             anchorX="center"
             anchorY="middle"
+            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
             MERRY CHRISTMAS
           </Text>
 
-          {/* Dòng 2: Cong Hau */}
+          {/* Dòng 2: Cong Hau - Sử dụng font Caveat */}
           <Text
             position={[0, -2.5, 0]}
-            fontSize={5.5}
+            fontSize={5.5} 
             color="#FFD700"
-            font="/caveat.ttf" // Trỏ thẳng vào file trong thư mục public
+            font="/Caveat-Regular.ttf"      // Viết chính xác tên file trong thư mục public
             anchorX="center"
             anchorY="middle"
+            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
