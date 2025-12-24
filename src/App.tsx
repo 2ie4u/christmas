@@ -405,34 +405,36 @@ const Experience = ({ sceneState, rotationSpeed }: { sceneState: 'CHAOS' | 'FORM
       <pointLight position={[0, -20, 10]} intensity={30} color="#ffffff" />
 
       <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
-        <group position={[0, 9, -18]}> {/* Cụm chữ cao hơn một chút (y=9) và lùi về sau cây (z=-18) */}
+        <group position={[0, 9, -18]}>
           
-          {/* Dòng 1: Indie Flower */}
+          {/* Dòng 1: MERRY CHRISTMAS - Nét bút tương tự Indie Flower */}
           <Text
-            position={[0, 2.5, 0]}
-            fontSize={4}
+            position={[0, 2.8, 0]}
+            fontSize={3.8}
             color="#FFD700"
-            font="https://raw.githack.com/google/fonts/main/ofl/indieflower/IndieFlower-Regular.ttf"
+            font="https://unpkg.com/@canvas-fonts/patrick-hand/fonts/PatrickHand-Regular.ttf"
             anchorX="center"
             anchorY="middle"
+            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
             MERRY CHRISTMAS
           </Text>
 
-          {/* Dòng 2: Caveat */}
+          {/* Dòng 2: Cong Hau - Font Caveat nét chuẩn chuyên dùng cho WebGL */}
           <Text
             position={[0, -2.5, 0]}
-            fontSize={5.5} // Phóng to font Caveat vì nét nó thanh
+            fontSize={5.2}
             color="#FFD700"
-            font="https://raw.githack.com/google/fonts/main/ofl/caveat/static/Caveat-Regular.ttf"
+            font="https://unpkg.com/@canvas-fonts/caveat/fonts/Caveat-Regular.ttf"
             anchorX="center"
             anchorY="middle"
+            textAlign="center"
             outlineWidth={0.06}
             outlineColor="#ffffff"
           >
-            Anh iu Miiu
+            Anh iuu Miiu
           </Text>
           
         </group>
